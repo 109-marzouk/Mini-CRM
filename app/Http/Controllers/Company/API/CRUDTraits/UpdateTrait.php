@@ -51,7 +51,7 @@ trait UpdateTrait
             $validated['logo'] = $old_logo_path;
         }
 
-        
+
 
         $company = CompanyBagTrait::updateCompany($company, $validated);
         return ApiBaseResponseTrait::sendResponse(

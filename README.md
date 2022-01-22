@@ -8,7 +8,7 @@ This project aims to provide you with capabilities like managing many companies'
 ## Demo Link
 
 - Try it now:
-    - [https://204.48.18.153/demos/mini_crm](https://204.48.18.153/demos/mini_crm)
+    - [http://204.48.18.153/demos/mini_crm](http://204.48.18.153/demos/mini_crm)
 - *Soon:*
     - [https://109-marzouk.tech/demos/mini_crm](https://109-marzouk.tech/demos/mini_crm)
 

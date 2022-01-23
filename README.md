@@ -8,9 +8,10 @@ This project aims to provide you with capabilities like managing many companies'
 ## Demo Link
 
 - Try it now:
-    - [http://204.48.18.153/demos/mini_crm](http://204.48.18.153/demos/mini_crm)
+    - [http://204.48.18.153/demos/mini-crm](http://204.48.18.153/demos/mini-crm)
 - *Soon:*
-    - [https://109-marzouk.tech/demos/mini_crm](https://109-marzouk.tech/demos/mini_crm)
+    - Note: I updated the name servers in my domain service provider and I am waiting to be updated.
+    - [http://109-marzouk.tech/demos/mini-crm](http://109-marzouk.tech/demos/mini-crm)
 
 ## APIs Documentation
 
@@ -29,7 +30,7 @@ This project aims to provide you with capabilities like managing many companies'
 1. Clone the project:
 
 ```markdown
-git clone (linktogithubrepo.com/) Mini-CRM
+git clone https://github.com/109-marzouk/Mini-CRM.git Mini-CRM
 ```
 
 1. Enter project folder:

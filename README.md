@@ -2,7 +2,7 @@
 
 This project aims to provide you with capabilities like managing many companies' info with their employees.
 
-> Note: It is just an assessment for me for a backend developer (intern) role that I have applied for.
+> **Note:** It is just an assessment for me for a backend developer (intern) role that I have applied for.
 > 
 
 ## Demo Link
@@ -18,6 +18,13 @@ This project aims to provide you with capabilities like managing many companies'
     - [https://documenter.getpostman.com/view/18932365/UVXqDsPJ](https://documenter.getpostman.com/view/18932365/UVXqDsPJ)
 
 ## Installation for DEVs locally
+
+> **Note:** Recommended Requirements (to work properly):
+> 
+- PHP v8.1.1
+- Composer v2.2.5
+- node v16.13.2
+- npm v8.3.2
 
 1. Clone the project:
 

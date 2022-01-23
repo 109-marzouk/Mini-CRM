@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\Web\CRUDTraits;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\ErrorToastNotification;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\SuccessToastNotificationTrait;
 use App\Models\Employee;
@@ -22,7 +22,7 @@ trait UpdateTrait {
      */
     public function update(Request $request, Employee $employee)
     {
-        $validator = EmployeeBagTrait::validateRequest($request, $employee->id);
+        $validator = EmployeeHelperTrait::validateRequest($request, $employee->id);
 
         if ($validator->fails())
         {
@@ -34,7 +34,7 @@ trait UpdateTrait {
 
         $validated = $validator->validated();
 
-        EmployeeBagTrait::updateEmployee($employee, $validated);
+        EmployeeHelperTrait::updateEmployee($employee, $validated);
         SuccessToastNotificationTrait::push('Employee', 'update');
         return redirect('employees');
     }

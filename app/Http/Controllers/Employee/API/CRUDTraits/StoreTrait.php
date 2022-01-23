@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\API\CRUDTraits;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Http\Resources\EmployeeResource;
 use Illuminate\Http\JsonResponse;
@@ -20,7 +20,7 @@ trait StoreTrait
      */
     public function store(Request $request)
     {
-        $validator = EmployeeBagTrait::validateRequest($request);
+        $validator = EmployeeHelperTrait::validateRequest($request);
 
         if ($validator->fails())
         {
@@ -33,7 +33,7 @@ trait StoreTrait
 
         $validated = $validator->validated();
 
-        $employee = EmployeeBagTrait::createEmployee($validated);
+        $employee = EmployeeHelperTrait::createEmployee($validated);
         return ApiBaseResponseTrait::sendResponse(
             new EmployeeResource($employee),
             'Employee was created successfully!'

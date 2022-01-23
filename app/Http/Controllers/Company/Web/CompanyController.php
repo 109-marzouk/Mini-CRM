@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Company\Web;
 
-use App\Http\Controllers\Company\CompanyBagTrait;
+use App\Http\Controllers\Company\CompanyHelperTrait;
 use App\Http\Controllers\Company\Web\CRUDTraits\CreateTrait;
 use App\Http\Controllers\Company\Web\CRUDTraits\DestroyTrait;
 use App\Http\Controllers\Company\Web\CRUDTraits\EditTrait;
@@ -22,7 +22,7 @@ class CompanyController extends Controller
     /**
      * Holds some shared operations like getting array of Employee fields, or validating the request.
      * */
-    use CompanyBagTrait;
+    use CompanyHelperTrait;
 
     /**
      * CRUD operations traits.

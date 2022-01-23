@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Company\API\CRUDTraits;
 
-use App\Http\Controllers\Company\CompanyBagTrait;
+use App\Http\Controllers\Company\CompanyHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
@@ -21,7 +21,7 @@ trait ShowTrait
         $company = Company::find($id);
         if (is_null($company)) {
             return ApiBaseResponseTrait::sendError(
-                CompanyBagTrait::getNotFoundMessage()
+                CompanyHelperTrait::getNotFoundMessage()
             );
         }
 

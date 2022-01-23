@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\API\CRUDTraits;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Http\Resources\EmployeeResource;
 use App\Models\Employee;
@@ -25,11 +25,11 @@ trait UpdateTrait
         $employee = Employee::find($id);
         if(is_null($employee)){
             return ApiBaseResponseTrait::sendError(
-                EmployeeBagTrait::getNotFoundMessage(),
+                EmployeeHelperTrait::getNotFoundMessage(),
             );
         }
 
-        $validator = EmployeeBagTrait::validateRequest($request, $employee->id);
+        $validator = EmployeeHelperTrait::validateRequest($request, $employee->id);
         if ($validator->fails())
         {
             return ApiBaseResponseTrait::sendError(
@@ -41,7 +41,7 @@ trait UpdateTrait
 
         $validated = $validator->validated();
 
-        $employee = EmployeeBagTrait::updateEmployee($employee, $validated);
+        $employee = EmployeeHelperTrait::updateEmployee($employee, $validated);
         return ApiBaseResponseTrait::sendResponse(
             new EmployeeResource($employee),
             'Employee was updated successfully!'

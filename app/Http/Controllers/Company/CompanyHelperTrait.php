@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
-trait CompanyBagTrait {
+trait CompanyHelperTrait {
 
     public static function validateRequest(Request $request, $logo_required = true, $id = null)
     {

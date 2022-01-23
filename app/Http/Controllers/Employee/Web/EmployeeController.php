@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\Web;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\Employee\Web\CRUDTraits\CreateTrait;
 use App\Http\Controllers\Employee\Web\CRUDTraits\DestroyTrait;
 use App\Http\Controllers\Employee\Web\CRUDTraits\EditTrait;
@@ -22,7 +22,7 @@ class EmployeeController extends Controller
     /**
      * Holds some shared operations like getting array of Employee fields, or validating the request.
      * */
-    use EmployeeBagTrait;
+    use EmployeeHelperTrait;
 
     /**
      * CRUD operations traits.

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Company\API\CRUDTraits;
 
-use App\Http\Controllers\Company\CompanyBagTrait;
+use App\Http\Controllers\Company\CompanyHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Http\Resources\CompanyResource;
 use Illuminate\Http\JsonResponse;
@@ -20,7 +20,7 @@ trait StoreTrait
      */
     public function store(Request $request)
     {
-        $validator = CompanyBagTrait::validateRequest($request);
+        $validator = CompanyHelperTrait::validateRequest($request);
 
         if ($validator->fails())
         {
@@ -34,7 +34,7 @@ trait StoreTrait
         $validated = $validator->validated();
         $validated['logo'] = $request->file('logo')->store('public');
 
-        $company = CompanyBagTrait::createCompany($validated);
+        $company = CompanyHelperTrait::createCompany($validated);
         return ApiBaseResponseTrait::sendResponse(
             new CompanyResource($company),
             'Company was created successfully!'

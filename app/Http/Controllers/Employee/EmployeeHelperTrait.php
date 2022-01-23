@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
-trait EmployeeBagTrait {
+trait EmployeeHelperTrait {
     public static function validateRequest(Request $request, $id = null)
     {
         $linkedin_url_regx = '/^https?:\/\/((www|\w\w)\.)?linkedin.com\/((in\/[^\/]+\/?)|(pub\/[^\/]+\/((\w|\d)+\/?){3}))$/i';

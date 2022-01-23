@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\Web\CRUDTraits;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\ErrorToastNotification;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\SuccessToastNotificationTrait;
 use Illuminate\Http\RedirectResponse;
@@ -20,7 +20,7 @@ trait StoreTrait {
      */
     public function store(Request $request)
     {
-        $validator = EmployeeBagTrait::validateRequest($request);
+        $validator = EmployeeHelperTrait::validateRequest($request);
 
         if ($validator->fails())
         {
@@ -33,7 +33,7 @@ trait StoreTrait {
 
         $validated = $validator->validated();
 
-        EmployeeBagTrait::createEmployee($validated);
+        EmployeeHelperTrait::createEmployee($validated);
         SuccessToastNotificationTrait::push('Employee', 'store');
         return redirect(route('companies.show', $validated['company_id']));
     }

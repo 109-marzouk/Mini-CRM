@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Company\Web\CRUDTraits;
 
-use App\Http\Controllers\Company\CompanyBagTrait;
+use App\Http\Controllers\Company\CompanyHelperTrait;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\ErrorToastNotification;
 use App\Http\Controllers\SharedTraits\ToastNotificationTraits\SuccessToastNotificationTrait;
 use App\Models\Company;
@@ -24,7 +24,7 @@ trait UpdateTrait
      */
     public function update(Request $request, Company $company)
     {
-        $validator = CompanyBagTrait::validateRequest($request, false, $company->id);
+        $validator = CompanyHelperTrait::validateRequest($request, false, $company->id);
         if ($validator->fails())
         {
             ErrorToastNotification::push('company', 'update');
@@ -44,7 +44,7 @@ trait UpdateTrait
             $validated['logo'] = $old_logo_path;
         }
 
-        CompanyBagTrait::updateCompany($company, $validated);
+        CompanyHelperTrait::updateCompany($company, $validated);
 
         SuccessToastNotificationTrait::push('Company', 'update');
         return redirect('companies');

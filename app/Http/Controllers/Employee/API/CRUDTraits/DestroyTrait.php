@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Employee\API\CRUDTraits;
 
-use App\Http\Controllers\Employee\EmployeeBagTrait;
+use App\Http\Controllers\Employee\EmployeeHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Models\Employee;
 use Illuminate\Http\JsonResponse;
@@ -21,7 +21,7 @@ trait DestroyTrait
         if(is_null($employee))
         {
             return ApiBaseResponseTrait::sendError(
-                EmployeeBagTrait::getNotFoundMessage(),
+                EmployeeHelperTrait::getNotFoundMessage(),
             );
         }
 

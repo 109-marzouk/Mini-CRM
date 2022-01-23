@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Company\API\CRUDTraits;
 
-use App\Http\Controllers\Company\CompanyBagTrait;
+use App\Http\Controllers\Company\CompanyHelperTrait;
 use App\Http\Controllers\SharedTraits\ApiBaseResponseTrait;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
@@ -26,11 +26,11 @@ trait UpdateTrait
         $company = Company::find($id);
         if(is_null($company)){
             return ApiBaseResponseTrait::sendError(
-                CompanyBagTrait::getNotFoundMessage(),
+                CompanyHelperTrait::getNotFoundMessage(),
             );
         }
 
-        $validator = CompanyBagTrait::validateRequest($request, false, $company->id);
+        $validator = CompanyHelperTrait::validateRequest($request, false, $company->id);
         if ($validator->fails())
         {
             return ApiBaseResponseTrait::sendError(
@@ -53,7 +53,7 @@ trait UpdateTrait
 
 
 
-        $company = CompanyBagTrait::updateCompany($company, $validated);
+        $company = CompanyHelperTrait::updateCompany($company, $validated);
         return ApiBaseResponseTrait::sendResponse(
             new CompanyResource($company),
             'Company was updated successfully!'

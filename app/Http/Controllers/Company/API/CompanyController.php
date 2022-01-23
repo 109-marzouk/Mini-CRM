@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class CompanyController extends Controller
 {
     /**
-     * => CompanyBagTrait
+     * => CompanyHelperTrait
      * Holds some shared operations like getting array of Employee fields, or validating the request.
      * */
 

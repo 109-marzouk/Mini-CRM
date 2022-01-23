@@ -48,7 +48,7 @@ composer install
 1. Install NPM Dependencies
 
 ```markdown
-npm install
+npm install && npm run dev
 ```
 
 1. Rename `.env.example` file to `.env`.

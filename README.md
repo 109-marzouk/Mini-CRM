@@ -30,40 +30,40 @@ This project aims to provide you with capabilities like managing many companies'
 git clone https://github.com/109-marzouk/Mini-CRM.git Mini-CRM
 ```
 
-1. Enter project folder:
+2. Enter project folder:
 
 ```markdown
 cd Mini-CRM
 ```
 
-1. Install Composer Dependencies
+3. Install Composer Dependencies
 
 ```markdown
 composer install
 ```
 
-1. Install NPM Dependencies
+4. Install NPM Dependencies
 
 ```markdown
 npm install && npm run dev
 ```
 
-1. Rename `.env.example` file to `.env`.
+5. Rename `.env.example` file to `.env`.
 
 ```markdown
 mv .env.example .env       # for linux/macOS
 ren .env.example .env      # for windows
 ```
 
-1. Generate an app encryption key
+6. Generate an app encryption key
 
 ```markdown
 php artisan key:generate
 ```
 
-1. Create an empty database for our application
+7. Create an empty database for our application
 
-1. In the .env file, add database information to allow Laravel to connect to the database
+8. In the .env file, add database information to allow Laravel to connect to the database
 
 ```markdown
 DB_CONNECTION=mysql
@@ -74,14 +74,22 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-1. Migrate the database
+9. Migrate the database
 
 ```markdown
 php artisan migrate
 ```
 
-1. Seed the database
+10. Seed the database
 
 ```markdown
 php artisan db:seed
 ```
+
+11. Run the project
+
+```markdown
+php artisan serve
+```
+
+Well Done!
